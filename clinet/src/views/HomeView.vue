@@ -1,18 +1,18 @@
 <template>
-  <HelloWorld />
+  <search />
 </template>
 
 <script>
 import { defineComponent } from 'vue';
 
 // Components
-import HelloWorld from '../components/HelloWorld.vue';
+import search from '../components/search.vue';
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
-    HelloWorld,
+    search,
   },
 });
 </script>
