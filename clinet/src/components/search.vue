@@ -3,44 +3,47 @@
   <!-- search bar for song serching -->
    <v-responsive
     class="mt-5 mx-auto"
-    max-width="400"
+    max-width="500"
     >
     <!-- the search text field -->
     <v-text-field
       id="songSearch"
+      elevation=0
       max-width=2
       rounded="lg"
-      variant="outlined"
+      variant="solo"
       filled
       color="black"
       placeholder="search song"
       append-inner-icon="mdi-magnify"
+      persistent-hint
       >
       <!-- search button -->
       <template v-slot:append>
           <v-btn @click="search" tile elevation=0 v-ripple color="pink" >search</v-btn>
       </template>
 
+      <!-- showing search result -->
+
+
       <v-snackbar
       v-model="snackbar"
+      text-color="white"
     >
       {{ text }}
 
       <template v-slot:actions>
         <v-btn
-          color="pink"
+          color="pink lighten-4"
           variant="text"
           @click="snackbar = false"
         >
           Close
         </v-btn>
       </template>
+
     </v-snackbar>
-
-
       </v-text-field>
-      
-       
 
       <!-- adding more filter options  -->
         <v-chip-group
@@ -61,36 +64,39 @@
               {{ tag }}
             </v-chip>
           </v-chip-group>
-
     </v-responsive>
-  <!-- </v-col> -->
-
 
 </template>
 
 <script>
 import { defineComponent } from 'vue';
+import searchResult from './search_results.vue';
 
 
 export default defineComponent({
   name: 'search',
 
+  // additional components
+  components: {
+    searchResult,
+  },
 
   data: () => ({
     snackbar: false,
-    text: "Searching the web for ${songSearch}.",
+    text: "Searching the web",
     tags: [
       "BPM",
       "GENRE",
       "COUNTRY",
       "POPULARITY"
-      ],
+    ],
   }),
 
   // the search call to the API
   methods: {
     search() {
       this.snackbar = true
+      console.log(this.songSearch)
 
     }
   }
