@@ -8,6 +8,7 @@
     <!-- the search text field -->
     <v-text-field
       id="songSearch"
+      v-model="song_search"
       elevation=0
       max-width=2
       rounded="lg"
@@ -20,7 +21,7 @@
       >
       <!-- search button -->
       <template v-slot:append>
-          <v-btn @click="search" tile elevation=0 v-ripple color="pink" >search</v-btn>
+          <v-btn @click="songSearch" tile elevation=0 v-ripple color="pink" >search</v-btn>
       </template>
 
       <!-- showing search result -->
@@ -82,6 +83,8 @@ export default defineComponent({
   },
 
   data: () => ({
+
+    searchSong: '',
     snackbar: false,
     text: "Searching the web",
     tags: [
@@ -94,9 +97,10 @@ export default defineComponent({
 
   // the search call to the API
   methods: {
-    search() {
-      this.snackbar = true
-      console.log(this.songSearch)
+    
+
+    async songSearch() {
+      alert(this.song_search)
 
     }
   }
