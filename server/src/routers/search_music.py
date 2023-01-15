@@ -16,27 +16,26 @@ async def playlist_from_search(details):
     return details
 
 # user registration
-@router.post('/search-result')
+@router.get('/search-result')
 async def recommendation_from_search(details):
     return details
 
-
 # user registration
-@router.post('/BPM-result')
+@router.get('/BPM-result')
 async def filter_by_BPM(details):
     return details
 
 # user registration
-@router.post('/genre-result')
+@router.get('/genre-result')
 async def filter_by_genre(details):
     return details
 
 # user registration
-@router.post('/country-result')
+@router.get('/country-result')
 async def filter_by_country(details):
     return details
 
 # user registration
-@router.post('/popularity-result')
+@router.get('/popularity-result')
 async def filter_by_popularity(details):
     return details
