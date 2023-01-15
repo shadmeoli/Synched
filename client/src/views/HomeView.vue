@@ -1,11 +1,7 @@
 <template>
 
 
-  <v-form>
-    <v-card height="10">
-    <v-text-field type="email" v-model="password" solo elevation="10" width="10dp"></v-text-field>
-  </v-card>
-  </v-form>
+  <LandingPage />
 
 </template>
 
@@ -13,13 +9,13 @@
 import { defineComponent } from 'vue';
 
 // Components
-import WelcomeItem from '../components/WelcomeItem.vue'
+import LandingPage from '../components/LandingPage.vue'
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
-    WelcomeItem
+    LandingPage
   },
 });
 </script>
