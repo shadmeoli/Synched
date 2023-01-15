@@ -6,7 +6,7 @@
     "serve": "vite preview",
     "build": "vite build",
     "build-only": "vite build",
-    "dev": "vite",
+    "dev": "vite --host",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit"
   },
