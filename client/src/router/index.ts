@@ -9,6 +9,18 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+    // [TODO] ->  create and connect the newly added routes | and make them lazy loaded
+    {
+      path: '/my_playlist',
+      name: 'my_playlist',
+      component: () => import('../views/MyPlaylist.vue')
+    },
+    {
+      path: '/saved_playlist',
+      name: 'saved_playlist',
+      component: () => import('../views/SavedPlaylist.vue')
+    },
+    
     {
       path: '/about',
       name: 'about',
