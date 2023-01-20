@@ -31,9 +31,9 @@
       max-width="500"
     >
       <v-card>
-        <v-card-title class="text-h5">
+        <v-text class="ml-15">
           User sign up
-        </v-card-title>
+        </v-text>
 
        <v-card elevation="0" class="mx-9 px-6 py-8" max-width="auto">
       <v-form
@@ -45,7 +45,6 @@
           :readonly="loading"
           :rules="[required]"
           class="mb-2"
-          clearable
           label="Username"
         ></v-text-field>
 
@@ -54,7 +53,6 @@
           :readonly="loading"
           :rules="[required]"
           class="mb-2"
-          clearable
           label="Email"
           type="email"
           placeholder="Enter your email addres"
@@ -64,7 +62,6 @@
           v-model="password"
           :readonly="loading"
           :rules="[required]"
-          clearable
           label="Password"
           type="password"
           placeholder="Enter your password"
@@ -86,25 +83,7 @@
       </v-form>
     </v-card>
 
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn
-            color="green darken-1"
-            text
-            
-          >
-            Disagree
-          </v-btn>
-
-          <v-btn
-            color="green darken-1"
-            text
-            @click="sign_up = false"
-          >
-            Agree
-          </v-btn>
-        </v-card-actions>
+        
       </v-card>
     </v-dialog>
 
@@ -145,8 +124,6 @@
       </v-card>
     </v-dialog>
 
-
-
     <v-main>
       <router-view/>
     </v-main>
@@ -164,8 +141,8 @@ export default defineComponent({
 
       drawer: false,
       group: null,
-      sign_up: '',
-      log_in: '',
+      sign_up: false,
+      log_in: false,
       
     }
   },

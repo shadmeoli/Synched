@@ -1,8 +1,10 @@
 from sqlalchemy import Column, Integer, String
+from sqlalchemy import create_engine, ForeignKey
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 
-# initilizer
+# initilizer for inheritance
 Base = declarative_base()
 
 
@@ -11,9 +13,10 @@ class Users(Base):
 
 	__tablename__ = "users"
 	# columns
-	id = Column(Integer, primary_key=True, autoincrement=True)
-	name = Column(String)
-	email = Column(String, unique=True)
+	id = Column('uid', Integer, primary_key=True, autoincrement=True)
+	name = Column('name', String)
+	email = Column('email', String, unique=True)
+	password = Column('password', String)
 
 
 # custom playlist
